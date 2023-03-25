@@ -6,45 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keypad</title>
   </head>
+  <style>
+    #codeOutput {
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+    }
+    #myForm {
+      margin: auto;
+      display: inline-block;
+    }
+  </style>
   <body>
-    <form action="">
+    <form action="" id="myForm">
       <p id="codeOutput"></p>
-      <input type="button" value="7" id="number7" class="button" />
-      <input type="button" value="8" id="number8" class="button" />
-      <input type="button" value="9" id="number9" class="button" />
       <br />
-      <input type="button" value="4" id="number4" class="button" />
-      <input type="button" value="5" id="number5" class="button" />
-      <input type="button" value="6" id="number6" class="button" />
+      <input type="button" value="7" id="number7" />
+      <input type="button" value="8" id="number8" />
+      <input type="button" value="9" id="number9" />
       <br />
-      <input type="button" value="1" id="number1" class="button" />
-      <input type="button" value="2" id="number2" class="button" />
-      <input type="button" value="3" id="number3" class="button" />
+      <input type="button" value="4" id="number4" />
+      <input type="button" value="5" id="number5" />
+      <input type="button" value="6" id="number6" />
       <br />
-      <input type="button" value="0" id="number0" class="button" />
+      <input type="button" value="1" id="number1" />
+      <input type="button" value="2" id="number2" />
+      <input type="button" value="3" id="number3" />
+      <br />
+      <input type="button" value="0" id="number0" />
       <input type="button" value="Enter" id="enter" />
       <br />
       <input type="button" value="Generate" id="generate" />
       <br />
+      <input type="button" value="Clear" id="reset" />
+      <br />
       <p id="screen"></p>
+      <br />
+      <p id="message"></p>
     </form>
-    <script>
-      var screen = document.getElementById("screen");
-      var gen = document.getElementById("generate");
-      var buttons = document.getElementsByClassName("button");
-      var output = document.getElementById("codeOutput");
-
-      function generateCode() {
-        var code = Math.floor(100000 + Math.random() * 900000);
-        screen.innerHTML = code;
-      }
-      gen.addEventListener("click", generateCode);
-
-      function outputCode() {
-        var btnValue = Number(buttons.value);
-        output.innerHTML = btnValue;
-      }
-      buttons.addEventListener("click", outputCode);
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
